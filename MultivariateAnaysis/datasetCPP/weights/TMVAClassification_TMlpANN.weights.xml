@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<MethodSetup Method="TMlpANN::TMlpANN">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.18/04 [397828]"/>
+    <Info name="Creator" value="edo"/>
+    <Info name="Date" value="Wed Feb 26 10:54:42 2020"/>
+    <Info name="Host" value="Linux edo-MSI 5.3.0-28-generic #30~18.04.1-Ubuntu SMP Fri Jan 17 06:14:09 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/home/edo/UbuntuData/Documents/AnalysisComo/MultivariateAnaysis"/>
+    <Info name="Training events" value="10000"/>
+    <Info name="TrainingTime" value="3.39800370e+01"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="No">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="No">None</Option>
+    <Option name="H" modified="No">False</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="NCycles" modified="Yes">250</Option>
+    <Option name="HiddenLayers" modified="Yes">N+9,N</Option>
+    <Option name="ValidationFraction" modified="Yes">5.000000e-01</Option>
+    <Option name="LearningMethod" modified="Yes">bfgs</Option>
+  </Options>
+  <Variables NVar="3">
+    <Variable VarIndex="0" Expression="cs" Label="cs" Title="cs" Unit="" Internal="cs" Type="F" Min="3.96428466e-01" Max="1.14327037e+00"/>
+    <Variable VarIndex="1" Expression="tstart" Label="tstart" Title="tstart" Unit="" Internal="tstart" Type="F" Min="3.15400000e+03" Max="3.19300000e+03"/>
+    <Variable VarIndex="2" Expression="r95" Label="r95" Title="r95" Unit="" Internal="r95" Type="F" Min="5.43500006e-01" Max="2.84575005e+01"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs/>
+  <Weights>
+    <Architecture BuildOptions="@cs,@tstart,@r95:12:3:type"/>
+    <input>
+      0.139402 0.889087 9.43608 3182.38 1.78959 2.57786 
+    </input>
+    <output>
+      1 0 
+    </output>
+    <neurons>
+      0.193217 0.354685 0.129555 -0.237927 4.75241 -1.28658 -0.188593 -1.31403 -2.29128 -2.45329 -3.66015 -0.00372647 0.172043 -1.08113 6.41424 0.941695 -1.73341 2.23453 -0.531496 
+    </neurons>
+    <synapses>
+      -5.76466 -4.66894 4.89108 -1.26919 -3.61572 4.17276 -4.46692 -3.58085 4.05986 1.62581 1.20388 -1.88755 -3.8795 -3.39516 3.33379 -0.696104 7.79162 -0.740856 2.93316 3.79774 -4.27836 0.752454 3.59721 -8.25464 2.23272 2.18872 -2.06189 4.54017 4.43861 -4.18632 4.92843 4.31956 -4.96681 1.60071 -4.65056 9.99288 -1.47354 4.02312 -1.98603 0.521752 -2.85416 2.44664 -2.26507 -2.6938 -0.414815 2.71757 0.438412 6.42281 1.71277 -6.49112 3.20477 -1.4776 4.22092 -5.22862 4.31194 7.40509 -0.26992 -1.90887 1.76431 -11.5402 -0.322193 2.69714 -1.24998 1.15838 -1.5994 3.87224 -1.41501 -3.10258 0.137388 1.50184 -0.331856 5.21882 1.87248 1.30303 -1.32966 
+    </synapses>
+  </Weights>
+</MethodSetup>
