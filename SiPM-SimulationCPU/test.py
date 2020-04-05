@@ -1,19 +1,19 @@
 from main import *
 
 pool = Pool(processes=4,initializer=initializeRandomPool)
-nEvt = 1000
-nPe = 5
+nEvt = 10000
+nPe = 25
 t = time.time()
 for i in range(nEvt):
-    timein = np.ones(np.random.poisson(nPe))*30
+    timein = np.ones(np.random.poisson(nPe))*40
     pool.apply_async(SiPM,args=(timein,[]),callback=Callback)
-    # SiPM(timein,[])
+    #output.append(SiPM(timein,[]))
 pool.close()
 pool.join()
 T = time.time()
 print(nEvt/(T-t))
 
-output = np.ascontiguousarray(output)
+output = np.array(output)
 
 integral = output[:,0]
 peak = output[:,1]

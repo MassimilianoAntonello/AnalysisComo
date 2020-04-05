@@ -2,9 +2,8 @@
 print('Written by Edoardo Proserpio \n')
 
 import numpy as np
-import cupy as cp
 import matplotlib.pyplot as plt
-import time, random, os, sys, argparse, struct, multiprocessing, matplotlib, psutil
+import time, random, os, sys, argparse, struct, multiprocessing, matplotlib, psutil, numba
 from multiprocessing import Pool
 from numpy import exp, hstack, unique, sort, sum, cumsum
 from numpy.random import randint, poisson, choice, exponential
@@ -118,10 +117,10 @@ print('Starting simulation on %d cores...\r'%(nJobs))
 #################################################################################################################
 #Conversion of time units from ns to units of sampling times. All the simulation works using samples as time unit.
 sampling *= 1.
-tfall = tfall/sampling
-trise = trise/sampling
-tauapfast = int(tauapfast/sampling)
-tauapslow = int(tauapslow/sampling)
+tfall = np.float32(tfall/sampling)
+trise = np.float32(trise/sampling)
+tauapfast = np.float32(tauapfast/sampling)
+tauapslow = np.float32(tauapslow/sampling)
 sigpts = int(siglen/sampling)
 cellside = int(size/(cellsize*1e-3))
 ncell = int(cellside**2)-1
